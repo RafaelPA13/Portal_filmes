@@ -1,0 +1,32 @@
+:root {
+  --color-brand: #db3f29;
+  --color-darkest: #03081b;
+  --color-dark: #212b50;
+  --color-mid: #d7a449;
+  --color-light: #e8e2d8;
+  --color-lightest: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-light);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 90%;
+  margin: 4.8rem auto;
+}

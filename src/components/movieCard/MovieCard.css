@@ -1,0 +1,34 @@
+.card {
+    background-color: var(--color-lightest);
+    border-radius: 2.4rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .5s;
+    text-decoration: none;
+}
+
+.card:hover {
+    transform: scale(0.98);
+}
+
+.card img {
+    width: 100%;
+    height: 30rem;
+    border-radius: 2.4rem;
+}
+
+.card .info {
+    width: 90%;
+    padding: 2.4rem;
+    color: var(--color-darkest);
+}
+
+.info h2 {
+    font-size: 1.8rem;
+}
+
+.info p {
+    font-size: 1.2rem;
+}
