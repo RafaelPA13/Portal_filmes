@@ -27,6 +27,7 @@
 
 .info h2 {
     font-size: 1.8rem;
+    color: var(--color-mid);
 }
 
 .info p {
