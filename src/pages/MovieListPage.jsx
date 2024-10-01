@@ -9,6 +9,9 @@ import movies from "../data/movies.json";
 export default function MovieListPage() {
   const [listMovies, setListMovies] = useState(movies);
   const [search, setSearch] = useState("");
+  const moviesFilter = listMovies.filter((movie) =>
+    movie.titulo.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <div className="container">
@@ -27,11 +30,11 @@ export default function MovieListPage() {
         />
       </div>
       <CardContainer>
-        {listMovies
-          .filter(movie => movie.titulo.includes(search))
-          .map((movie) => (
-            <MovieCard key={movie.id} {...movie} />
-          ))}
+        {moviesFilter.length > 0 ? (
+          moviesFilter.map((movie) => <MovieCard key={movie.id} {...movie} />)
+        ) : (
+          <h1>Filme não encontrado</h1>
+        )}
       </CardContainer>
     </div>
   );

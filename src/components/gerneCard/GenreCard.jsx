@@ -1,10 +1,10 @@
 import "./GenreCard.css"
 
-export default function GenreCard() {
+export default function GenreCard({genero, descricao}) {
   return (
-    <>
-      <h1>Genre Card</h1>
-      {/* Modelo de card que será utilizado para os gêneros */}
-    </>
+    <div className="card-genero">
+      <h1>{genero}</h1>
+      <p>{descricao}</p>
+    </div>
   );
 }
