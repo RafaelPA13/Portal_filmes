@@ -3,14 +3,24 @@ import MovieCard from "../components/movieCard/MovieCard";
 
 import { FaSearch } from "react-icons/fa";
 
-import { useState } from "react";
-import movies from "../data/movies.json";
+import { useState, useEffect } from "react";
 
 export default function MovieListPage() {
-  const [listMovies, setListMovies] = useState(movies);
+  const [listMovies, setListMovies] = useState([]);
   const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    fetch(
+      "https://api.themoviedb.org/3/movie/popular?api_key=7c572a9f5b3ba776080330d23bb76e1e&language=pt-br"
+    )
+      .then((res) => res.json())
+      .then((data) => setListMovies(data.results))
+      .catch((error) => console.log(error))
+      .finally(() => console.log("FIM"));
+  }, []);
+
   const moviesFilter = listMovies.filter((movie) =>
-    movie.titulo.toLowerCase().includes(search.toLowerCase())
+    movie.title.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
